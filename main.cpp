@@ -12,9 +12,11 @@ menu:
 	std::cout
 		<< "1. Add 2D figure\n"
 		<< "2. Add 3D figure\n"
-		<< "3. Display contents\n"
-		<< "4. Save to file\n"
-		<< "5. Load from file\n"
+		<< "3. Remove 2D figure\n"
+		<< "4. Remove 3D figure\n"
+		<< "5. Display contents\n"
+		<< "6. Save to file\n"
+		<< "7. Load from file\n"
 		<< "0. Exit\n\n";
 
 	
@@ -30,16 +32,28 @@ keyscan:
 
 		break;
 	case '3':
-		if(!keeper.describe()) std::cout << "Nothing to display!\n";
+		std::cout << "Enter index of 2D figure to be removed: ";
+		std::cin >> index;
+		keeper.removeFigure2D(index);
 
 		break;
 	case '4':
+		std::cout << "Enter index of 3D figure to be removed: ";
+		std::cin >> index;
+		keeper.removeFigure3D(index);
+
+		break;
+	case '5':
+		if(!keeper.describe()) std::cout << "Nothing to display!\n";
+
+		break;
+	case '6':
 		keeper.save();
 
 		std::cout << "Saved!\n";
 
 		break;
-	case '5':
+	case '7':
 		keeper.load();
 
 		std::cout << "Loaded!\n";

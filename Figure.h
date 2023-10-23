@@ -5,9 +5,9 @@ class Figure
 {
 public:
 	//bool isSet = false;
-	virtual void describe() = 0;
+	virtual void describe() = 0; // Чистая виртуальная функция
 
-	inline virtual ~Figure()
+	inline virtual ~Figure() // Виртуальный деструктор
 	{
 	}
 

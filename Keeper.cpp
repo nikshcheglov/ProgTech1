@@ -64,7 +64,7 @@ bool Keeper::load()
 	figures3D.clear();
 
 	std::ifstream file("data.txt");
-	std::string line, type ;
+	std::string line, type;
 
 	while (line != "\t\t\t")
 	{
@@ -101,7 +101,7 @@ bool Keeper::load()
 		else
 		{
 			std::cout << "Invalid save file!\n";
-			return false; 
+			return false;
 		}
 	}
 
