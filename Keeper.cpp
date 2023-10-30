@@ -3,6 +3,23 @@
 #include <string>
 #include <sstream>
 
+Keeper::Keeper()
+{
+
+}
+
+Keeper::Keeper(std::vector<Figure2D> figures2D, std::vector<Figure3D> figures3D)
+{
+	this->figures2D = figures2D;
+	this->figures3D = figures3D;
+}
+
+Keeper::Keeper(Keeper* copyFrom)
+{
+	figures2D = copyFrom->figures2D;
+	figures3D = copyFrom->figures3D;
+}
+
 void Keeper::addFigure2D()
 {
 	Figure2D newFigure2D;

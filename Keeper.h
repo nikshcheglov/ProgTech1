@@ -8,6 +8,10 @@ class Keeper
 	std::vector<Figure2D> figures2D;
 	std::vector<Figure3D> figures3D;
 public:
+	Keeper();
+	Keeper(std::vector<Figure2D> figures2D, std::vector<Figure3D> figures3D);
+	Keeper(Keeper* copyFrom);
+
 	void addFigure2D();
 	void addFigure3D();
 

@@ -16,3 +16,24 @@ void Figure2D::describe()
 {
 	std::cout << "2D " << type << ' ' << dimensions << ' ' << area << ' ' << areaOnScreen << '\n';
 }
+
+Figure2D::Figure2D()
+{
+	area = 0;
+}
+
+Figure2D::Figure2D(std::string type, std::string dimensions, double area, double areaOnScreen)
+{
+	this->type = type;
+	this->dimensions = dimensions;
+	this->area = area;
+	this->areaOnScreen = areaOnScreen;
+}
+
+Figure2D::Figure2D(Figure2D* copyFrom)
+{
+	type = copyFrom->type;
+	dimensions = copyFrom->dimensions;
+	area = copyFrom->area;
+	areaOnScreen = copyFrom->areaOnScreen;
+}
