@@ -1,13 +1,12 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 
 class Figure
 {
 public:
-	//bool isSet = false;
-	virtual void describe() = 0; // Чистая виртуальная функция
+	virtual void describe() = 0; // Р§РёСЃС‚Р°СЏ РІРёСЂС‚СѓР°Р»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ
 
-	inline virtual ~Figure() // Виртуальный деструктор
+	inline virtual ~Figure() // Р’РёСЂС‚СѓР°Р»СЊРЅС‹Р№ РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 	{
 	}
 

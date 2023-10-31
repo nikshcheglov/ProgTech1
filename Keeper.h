@@ -15,6 +15,8 @@ public:
 	void addFigure2D();
 	void addFigure3D();
 
+	bool copyLastFigure2D();
+
 	bool removeFigure2D(int index);
 	bool removeFigure3D(int index);
 

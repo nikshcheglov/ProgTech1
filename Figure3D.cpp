@@ -37,3 +37,11 @@ Figure3D::Figure3D(Figure3D* copyFrom)
 	volume = copyFrom->volume;
 	areaOnScreen = copyFrom->areaOnScreen;
 }
+
+std::ostream& operator<<(std::ostream& leftHandSide, const Figure3D& rightHandSide)
+{
+	leftHandSide << "3D " << rightHandSide.type << ' ' << rightHandSide.dimensions << ' '
+		<< rightHandSide.volume << ' ' << rightHandSide.areaOnScreen << '\n';
+
+	return leftHandSide;
+}

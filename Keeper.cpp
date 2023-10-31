@@ -37,29 +37,53 @@ void Keeper::addFigure3D()
 	figures3D.push_back(newFigure3D);
 }
 
+bool Keeper::copyLastFigure2D()
+{
+	if (figures2D.size() < 1) 
+		return false;
+
+	Figure2D newFigure2D(figures2D[figures2D.size() - 1]);
+
+	figures2D.push_back(newFigure2D);
+
+	return true;
+}
+
 bool Keeper::removeFigure2D(int index)
 {
-	if (index < 0 || index >= figures2D.size())
+	try
 	{
-		std::cout << "No 2D figure with such index!\n";
+		if (index > 0 && index < figures2D.size())
+			figures2D.erase(figures2D.begin() + index);
+		else
+			throw (index);
+	}
+	catch (int incorrectIndex)
+	{
+		std::cout << "Incorrect 2D figure index " << incorrectIndex << "!\n";
 
 		return false;
 	}
 
-	figures2D.erase(figures2D.begin() + index);
 	return true;
 }
 
 bool Keeper::removeFigure3D(int index)
 {
-	if (index < 0 || index >= figures3D.size())
+	try
 	{
-		std::cout << "No 3D Figure with such index!\n";
+		if (index > 0 && index < figures3D.size())
+			figures3D.erase(figures3D.begin() + index);
+		else
+			throw (index);
+	}
+	catch (int incorrectIndex)
+	{
+		std::cout << "Incorrect 3D figure index " << incorrectIndex << "!\n";
 
 		return false;
 	}
 
-	figures3D.erase(figures3D.begin() + index);
 	return true;
 }
 
@@ -116,10 +140,7 @@ bool Keeper::load()
 			figures3D.push_back(newFigure3D);
 		}
 		else
-		{
-			std::cout << "Invalid save file!\n";
 			return false;
-		}
 	}
 
 	return true;
@@ -135,12 +156,12 @@ bool Keeper::describe()
 
 	for (Figure2D a : figures2D)
 	{
-		a.describe();
+		std::cout << a;
 	}
 
 	for (Figure3D a : figures3D)
 	{
-		a.describe();
+		std::cout << a;
 	}
 
 	return true;

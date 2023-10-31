@@ -37,3 +37,11 @@ Figure2D::Figure2D(Figure2D* copyFrom)
 	area = copyFrom->area;
 	areaOnScreen = copyFrom->areaOnScreen;
 }
+
+std::ostream& operator<<(std::ostream& leftHandSide, const Figure2D& rightHandSide)
+{
+	leftHandSide << "2D " << rightHandSide.type << ' ' << rightHandSide.dimensions << ' '
+		<< rightHandSide.area << ' ' << rightHandSide.areaOnScreen << '\n';
+
+	return leftHandSide;
+}

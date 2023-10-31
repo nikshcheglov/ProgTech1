@@ -17,9 +17,10 @@ menu:
 		<< "5. Display contents\n"
 		<< "6. Save to file\n"
 		<< "7. Load from file\n"
+		<< "8. Copy last 2D figure (copy constructor)\n"
 		<< "0. Exit\n\n";
 
-	
+
 keyscan:
 	switch (c = _getch())
 	{
@@ -44,7 +45,7 @@ keyscan:
 
 		break;
 	case '5':
-		if(!keeper.describe()) std::cout << "Nothing to display!\n";
+		if (!keeper.describe()) std::cout << "Nothing to display!\n";
 
 		break;
 	case '6':
@@ -54,9 +55,17 @@ keyscan:
 
 		break;
 	case '7':
-		keeper.load();
+		if (keeper.load()) 
+			std::cout << "Loaded!\n";
+		else
+			std::cout << "Invalid save file!\n";
 
-		std::cout << "Loaded!\n";
+		break;
+	case '8':
+		if (keeper.copyLastFigure2D())
+			std::cout << "Copied!\n";
+		else
+			std::cout << "No 2D figures to copy!\n";
 
 		break;
 	case '0':
